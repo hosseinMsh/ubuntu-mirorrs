@@ -1,9 +1,7 @@
-name: Test Ubuntu Mirrors
+name: Deploy
 
 on:
   push:
-    branches: [main, master]
-  pull_request:
     branches: [main, master]
   schedule:
     - cron: '0 */6 * * *'
@@ -19,14 +17,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  test-mirrors:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Test Mirrors
         id: test
@@ -42,5 +39,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        if: github.event_name != 'pull_request'
         uses: actions/deploy-pages@v4

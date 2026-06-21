@@ -1,0 +1,61 @@
+name: Weekly Report
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate & Create Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ ! -f docs/stats.env ]; then
+            echo "No stats found. Run deploy workflow first."
+            exit 0
+          fi
+
+          source docs/stats.env
+          TIMESTAMP=$(cat docs/timestamp.txt 2>/dev/null || echo "N/A")
+
+          OFFLINE_MIRRORS=$(python3 -c "
+import json
+with open('docs/mirrors.json') as f:
+    data = json.load(f)
+offline = [m for m in data if m['status'] == 'offline']
+for m in offline:
+    print(f'- **{m[\"name\"]}** ({m[\"location\"]}) — {m[\"url\"]}')
+" 2>/dev/null) || OFFLINE_MIRRORS="- None"
+
+          gh issue create \
+            --title "📡 Mirror Status Report — $(date -u '+%Y-%m-%d')" \
+            --label "report" \
+            --body "$(cat << EOF
+## 📡 Mirror Status Report
+
+**Last checked:** $TIMESTAMP
+
+### Overview
+| Metric | Value |
+|--------|-------|
+| 🗂️ Total Mirrors | $TOTAL |
+| ✅ Online | $ONLINE |
+| ❌ Offline | $OFFLINE |
+| ⚡ Fastest | $FASTEST_NAME ($FASTEST_MS ms) |
+
+### ❌ Offline Mirrors
+${OFFLINE_MIRRORS:-None}
+
+---
+_🤖 This report is automatically generated every Monday by GitHub Actions._
+EOF
+)"

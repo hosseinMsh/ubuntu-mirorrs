@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches-ignore: [main, master]
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint & Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: ./scripts
+
+      - name: Bash Syntax Check
+        run: bash -n scripts/test-mirrors.sh
+
+      - name: Check Required Tools
+        run: |
+          command -v curl >/dev/null && echo "curl OK"
+          command -v python3 >/dev/null && echo "python3 OK"
