@@ -20,6 +20,13 @@ MIRRORS_IRAN=(
   "https://mirror.rasanegar.com/ubuntu/|Rasanegar|تهران"
   "http://mirrors.sharif.ir/ubuntu/|دانشگاه شریف|تهران"
   "http://mirror.ut.ac.ir/ubuntu/|دانشگاه تهران|تهران"
+  "http://mirror.afranet.com/ubuntu/|Afranet|تهران"
+  "https://ubuntu.pishgaman.net/ubuntu/|Pishgaman|تهران"
+  "http://mirror.manageit.ir/ubuntu/|ManageIT|تهران"
+  "https://ubuntu-mirror.kimiahost.com/ubuntu/|KimiaHost|تهران"
+  "https://mirror.digitalvps.ir/ubuntu/|DigitalVPS|تهران"
+  "https://mirror.parsdev.com/ubuntu/|ParsDev|تهران"
+  "http://mirrors.pol.hostinja.com/ubuntu/|Hostinja|تهران"
 )
 
 MIRRORS_WORLD=(
@@ -28,6 +35,13 @@ MIRRORS_WORLD=(
   "https://mirror.init7.net/ubuntu/|Init7|Switzerland"
   "http://ftp.rz.uni-wuerzburg.de/ubuntu/|Uni Wuerzburg|Germany"
   "http://mirror.23m.com/ubuntu/|23M|USA"
+  "https://mirrors.tuna.tsinghua.edu.cn/ubuntu/|Tsinghua|China"
+  "https://mirrors.ustc.edu.cn/ubuntu/|USTC|China"
+  "https://mirrors.aliyun.com/ubuntu/|Alibaba Cloud|China"
+  "https://ftp.udx.icscoe.jp/Linux/ubuntu/|ICSCoE|Japan"
+  "https://ftp.uni-stuttgart.de/ubuntu/|Uni Stuttgart|Germany"
+  "https://mirror.aarnet.edu.au/pub/ubuntu/archive/|AARNet|Australia"
+  "https://mirror.aktkn.sg/ubuntu/|AKTKN|Singapore"
 )
 
 ALL_MIRRORS=()

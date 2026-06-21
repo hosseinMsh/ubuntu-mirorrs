@@ -53,6 +53,13 @@ A live, auto-updating dashboard showing:
 | Rasanegar | تهران |
 | دانشگاه شریف | تهران |
 | دانشگاه تهران | تهران |
+| Afranet | تهران |
+| Pishgaman | تهران |
+| ManageIT | تهران |
+| KimiaHost | تهران |
+| DigitalVPS | تهران |
+| ParsDev | تهران |
+| Hostinja | تهران |
 
 ### 🌍 World
 
@@ -63,6 +70,13 @@ A live, auto-updating dashboard showing:
 | Init7 | Switzerland |
 | Uni Wuerzburg | Germany |
 | 23M | USA |
+| Tsinghua | China |
+| USTC | China |
+| Alibaba Cloud | China |
+| ICSCoE | Japan |
+| Uni Stuttgart | Germany |
+| AARNet | Australia |
+| AKTKN | Singapore |
 
 ---
 
