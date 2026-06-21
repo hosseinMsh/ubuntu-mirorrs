@@ -209,7 +209,6 @@ html = r'''<!DOCTYPE html>
         <option value="offline">❌ آفلاین</option>
       </select>
       <a href="https://github.com/hosseinMsh/ubuntu-mirorrs" target="_blank" class="github-btn">📂 مخزن پروژه</a>
-      <button class="refresh-btn" onclick="fetchData()">🔄 بروزرسانی</button>
       <span class="count" id="mirrorCount"></span>
     </div>
 
@@ -232,7 +231,6 @@ html = r'''<!DOCTYPE html>
 
     <footer>
       <p>طراحی شده با ❤️ توسط <a href="https://github.com/hosseinMsh" target="_blank">Hossein.Msh</a></p>
-      <p style="margin-top:4px;">منبع: <a href="https://github.com/hosseinit1988/Ubuntu-Repository-iran" target="_blank">Ubuntu Repository Iran</a></p>
       <p style="margin-top:4px;">قدرت گرفته از <a href="https://github.com/features/actions" target="_blank">GitHub Actions</a></p>
       <p style="margin-top:4px;"><a href="https://github.com/hosseinMsh/ubuntu-mirorrs" target="_blank">📂 مخزن پروژه در GitHub</a></p>
     </footer>
