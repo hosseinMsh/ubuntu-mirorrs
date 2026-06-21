@@ -109,12 +109,14 @@ with open("docs/stats.env", "w") as f:
     f.write(f"TOTAL={total}\n")
     f.write(f"ONLINE={len(online)}\n")
     f.write(f"OFFLINE={len(offline)}\n")
-    fastest_name = shlex.quote(fastest['name'] if fastest else "N/A")
-    fastest_ms = shlex.quote(str(fastest['response_time'] if fastest else 0))
+    fastest_name_raw = fastest["name"] if fastest else "N/A"
+    fastest_ms_raw = fastest["response_time"] if fastest else 0
+    fastest_name = shlex.quote(fastest_name_raw)
+    fastest_ms = shlex.quote(str(fastest_ms_raw))
     f.write(f"FASTEST_NAME={fastest_name}\n")
     f.write(f"FASTEST_MS={fastest_ms}\n")
 
-fastest_label = f'{fastest["name"]} ({fastest["response_time"]}ms)' if fastest else "---"
+fastest_label = f"{fastest_name_raw} ({fastest_ms_raw}ms)" if fastest else "---"
 
 html = r'''<!DOCTYPE html>
 <html lang="fa" dir="rtl">
